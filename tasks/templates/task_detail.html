@@ -8,6 +8,30 @@
 
 {% block content %}
     <h1>detalle de las tareas</h1>
+
+    {{ error }}
+
     {{tasks.title}}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>
+            update
+        </button>
+    </form>
+
+    <form action="{% url 'complete_task' tasks.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+            completed
+        </button>
+    </form>
+
+    <form action="{% url 'delete_task' tasks.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+            delete
+        </button>
+    </form>
 {% endblock content %}
     

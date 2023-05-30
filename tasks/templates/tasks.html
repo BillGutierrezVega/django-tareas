@@ -20,6 +20,7 @@ Home
             {% endif %}
             <p>{{ task.description }}</p>
             <p>{{ task.user.username }}</p>
+            <p>{{ task.datecompleted|date:'M j Y:i' }}</p>
         </a>
     </li>
     {% endfor %}
